@@ -1,0 +1,900 @@
+
+// import fonts chữ
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,100;1,300;1,400;1,500;1,800&family=Yuji+Boku&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,100;1,300;1,400;1,500;1,800&display=swap');
+
+// đặt biến
+
+$color:#183153;
+$tabs:#f2f2fc;
+@mixin size ($width, $height) {
+    width:$width ;
+    height: $height;
+}
+
+@mixin tabs (){
+    margin-top: 0;
+    animation: animate 1.2s ease-in-out ;
+    background-color: $tabs;
+    height: 100vh;
+}
+
+@mixin heading (){
+    color: $color;
+    font-weight: 700;
+    position: relative;
+    font-size: 30px;
+    padding-top: 7rem;
+
+    &::before{
+        position: absolute;
+        content: "";
+        top: 100%;
+        height: 4px;
+        width: 70px;
+        background-color: orangered;
+    }
+
+    &::after{
+        position: absolute;
+        content: "";
+        top: 100%;
+        height: 4px;
+        width: 50px;
+        left: 0;
+        background-color: orangered;
+        margin-top: 8px;
+    }
+}
+
+@mixin before () {
+    position: absolute;
+    top: -20px;
+    left: 0;
+}
+
+@mixin after () {
+    position: absolute;
+    top: -20px;
+    right: 0;
+}
+// end đặt biến
+
+
+
+// reset css
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+// end reset
+
+body{
+    display: flex;
+    background-color: red;
+    width: 100%;
+    
+}
+
+// sidebar
+aside{
+    flex: 2;
+    background-color: #fef9ff;
+    height: 100vh;
+    border-right: 1px solid #ccc;
+ 
+    
+    // logo
+    .logo{
+        // background-color: rebeccapurple;
+        margin-top: 4rem;
+
+        h2{
+            position: relative;
+            margin:  0 auto;
+            display: inline-block;
+            text-align: center;
+            // background-color: red;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 2rem 4rem;
+            color: orangered;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        span:first-child{
+            position: absolute;
+            content: "";
+            @include size(7px, 3rem );
+            left: 0;
+            top: 0;
+            background-color:orangered;
+        }
+
+        span:nth-child(2){
+            position: absolute;
+            content: "";
+            @include size(3rem, 7px );
+            left: 0;
+            top: 0;
+            background-color:orangered;
+        }
+
+        span:nth-child(3){
+            position: absolute;
+            content: "";
+            @include size(7px, 3rem);
+            right: 0;
+            bottom: 0;
+            background-color:orangered;
+        }
+
+        span:nth-child(4){
+            position: absolute;
+            content: "";
+            @include size(3rem, 7px );
+            right: 0;
+            bottom: 0;
+            background-color:orangered;
+        }
+        
+    }
+
+
+    // Tabs
+    /* Style the tab */
+
+    nav{
+        margin-top: 10rem;
+        padding: 0 5rem;
+
+        .tab a {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            display: block;
+            flex-direction: column;
+            text-decoration: none;
+            font-weight: 700;
+            color: $color;
+            
+            /* Change background color of buttons on hover */
+            &:hover {
+              color: orangered;
+            }
+    
+            /* Create an active/current tablink class */
+            &.active {
+              color: orangered;
+            }
+
+            i{
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .copy__right{
+        display: flex;
+        justify-content:center;
+        margin-top: 10rem;
+        
+        a{
+            text-decoration: none;
+            color: $color;
+            text-align: center;
+        }
+    }
+
+    .hambuger{
+        display: none;
+        cursor: pointer;
+       
+
+        .bar{
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.5s ease-in-out;
+            background-color: black;
+        }
+    }
+ 
+}
+
+// end sidebar
+
+
+// =================================================================================
+
+// main
+main{
+    flex: 8;
+
+    // home
+    #Home{
+        background-color: $tabs;
+        // height: 100vh;
+        animation: animate 1.2s ease-in-out;
+        
+        .content{
+            display: flex;
+
+            .left{
+                margin: auto 0;
+                flex: 1;
+                // background-color: green;
+                h2{
+                    margin:0 5rem ;
+                    font-weight: 700;
+                    font-size: 30px;
+
+                    span{
+                        font-style: italic;
+                        color: orangered;
+                    }
+                }
+                .tying__animate{
+                    margin:2rem 5rem;
+                    // background-color: red;
+                    .text{
+                        position: relative;
+                        color: $color;
+                        font-size: 25px;
+                        font-weight: 600;
+                    }
+                    .first-text{
+                        color: orangered;
+                    }
+
+                    .sec-text::before{
+                        position: absolute;
+                        content: "";
+                        top: 0;
+                        left: 0;
+                        @include size(100%,100% );
+                        background-color: #f2f2fc;
+                        border-left: 2px solid $color;
+                        animation: tying 5s steps(12) infinite;
+                    }
+                }
+
+                p{
+                    color: $color;
+                    text-align: justify;
+                    margin: 0 5rem;
+                }
+
+                .social{
+                    margin: 2rem 5rem;
+
+                    a{
+                        color: orangered;
+                        font-size: 30px;
+                        padding: 10px;
+                        transition: transform 3s;
+
+                        
+                        i:hover{
+                            transform: scale(1.2);
+                            color: $color;
+                        }
+                    }
+                }
+
+                .download_cv{
+                    margin: 5rem 0;
+                    a{
+                        color: white;
+                        background-color: orangered;
+                        padding: 10px;
+                        border-radius: 10px;
+                        margin-left: 5rem;
+                        transition: all 0.5s ease-in-out;
+
+                        &:hover{
+                            transform: scale(1.2);
+                        }
+
+                        i{
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                @keyframes tying {
+                    40%, 60%{
+                        left: calc(100% + 4px);
+                    }
+                    100%{
+                        left: 0%;
+                    }
+                }  
+            }
+
+            .right{
+                flex: 1;
+                height: 100vh;
+                // background-color: yellow;
+
+                .boxed{
+                    background-color: #f2f2fc;
+                    @include size(400px,400px );
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    border-radius: 50%;
+                    overflow: hidden;
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                    &:hover::before{
+                        inset: 0;
+                    }
+
+                    &::before{
+                        position: absolute;
+                        content: "";
+                        inset: -20px 100px;
+                        background:linear-gradient(to top,green,blue, pink);
+                        transition: all 0.5s ease-in-out;
+                        animation: img 3s infinite linear;
+                       
+                    }
+
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        inset: 10px;
+                        background:$color;
+                        border-radius: 50%;
+                        
+                    }
+
+                    .img{
+                        position: absolute;
+                        content: "";
+                        inset: 10px;
+                        background-color: $color;
+                        z-index: 3;
+                        border-radius: 50%;
+                        color: #fef9ff;
+                        object-fit: cover;
+                            
+                        img{
+                            position: absolute;
+                            @include size(100%,100% );
+                            top: 0;
+                            left: 0;
+                            border-radius: 50%;
+                            z-index: 5;
+                            &:hover{
+                                opacity: 0;
+                            }
+                        }
+
+                        h3{
+                           position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            text-align: center;
+                            top: 35%;
+                            font-size: 30px;
+
+                            span{
+                                font-size: 20px;
+                                margin-top: 10px;
+                                font-weight: 400;
+                            }   
+                        }
+                    }
+
+                }
+
+                @keyframes img {
+                    100%{
+                        transform: rotate(360deg);
+                    }
+                    
+                }
+            }
+        }   
+    }
+    // end css home
+
+
+    // ==========================================
+
+    // about css
+    #About{
+        margin-top: 0;
+        animation: animate 1.2s ease-in-out ;
+        background-color: $tabs;
+        height: 100%;
+        
+        // content
+        .content{
+            padding: 0 3rem;
+
+            .heading{
+                @include heading();
+            }
+
+            .title{
+                color: $color;
+                padding: 10px 0;
+                
+                span{
+                    color: orangered
+                }
+            }
+
+            .description{
+                text-align: justify;
+            }
+
+            .infomation{
+                margin-top: 50px;
+                display: flex;
+
+                .info{
+                    flex: 1;
+                    display: flex;
+
+                    &__left{
+                        flex: 1;
+                        // background-color: yellow;
+
+                        &-item{
+                            // background-color: red;
+                            margin: 10px;
+                            padding: 5px 0;
+                            font-weight: 600;
+                            border-bottom: 1px solid #ccc;
+
+                            span{
+                                font-weight: 500;
+                                margin-left: 10px;
+                            }
+                        }
+
+                    }
+
+                    &__right{
+                        flex: 1;
+                        // background-color: darkgreen;
+
+                        &-item{
+                            // background-color: red;
+                            margin: 10px;
+                            padding: 5px 0;
+                            font-weight: 600;
+                            border-bottom: 1px solid #ccc;
+
+                            span{
+                                font-weight: 500;
+                                margin-left: 10px;
+                            }
+                        }
+
+                    }
+
+                }
+
+                .skill{
+                    flex: 1;
+                    // background-color: red;
+                    padding-left: 30px;
+
+                    &__bar{
+                        width: 100%;
+                        height: 10px;
+                        background-color: #ccc;
+                        margin-top: 40px;
+                        border-radius: 10px;
+
+                        .html5{
+                            width: 90%;
+                            height: 10px;
+                            background-color: orangered;
+                            border-radius: 10px;
+                            position: relative;
+
+                            &::before{
+                                content: "Html5";
+                                @include before();
+                            }
+
+                            &::after{
+                                content: "90%";
+                                @include after();
+                            } 
+                           
+                        }
+
+                        .css3{
+                            width: 80%;
+                            height: 10px;
+                            background-color: orangered;
+                            border-radius: 10px;
+                            position: relative;
+
+                            &::before{
+                                content: "Css3";
+                                @include before();
+                            }
+
+                            &::after{
+                                content: "80%";
+                                @include after();
+                            } 
+                           
+                        }
+
+                        .javascript{
+                            width: 75%;
+                            height: 10px;
+                            background-color: orangered;
+                            border-radius: 10px;
+                            position: relative;
+
+                            &::before{
+                                content: "Javascript";
+                                @include before();
+                            }
+
+                            &::after{
+                                content: "75%";
+                                @include after();
+                            } 
+                           
+                        }
+
+                        .reactjs{
+                            width: 55%;
+                            height: 10px;
+                            background-color: orangered;
+                            border-radius: 10px;
+                            position: relative;
+
+                            &::before{
+                                content: "Reactjs";
+                                @include before();
+                            }
+
+                            &::after{
+                                content: "55%";
+                                @include after();
+                            } 
+                           
+                        }
+
+                    }
+                }
+            }
+
+            .education{
+                display: flex;
+                margin-top: 2rem;
+
+                .left{
+                    flex: 1;
+                    // background-color: red;
+        
+                    .title{
+
+                    }
+                }
+
+                .right{
+                    flex: 1;
+                    // background-color: yellow
+                }
+            }
+
+
+
+        }
+
+    }
+
+    // end about css
+
+
+    // ================================================
+
+
+    // service css
+    #Services{
+        @include tabs();
+        height: 100%;
+        padding-bottom: 10rem;
+        // width: 100%;
+
+        .content{
+            padding: 0 3rem;
+            height: 100%;
+
+            .heading{
+                @include heading();
+            }
+
+            .service{
+                margin-top: 10rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 50px;
+                
+
+                .box__service{
+                    background-color: #fff;
+                    // height: 200px;
+                    // display: flex;
+                    // justify-content: flex-end;
+                    // flex-direction: column;
+                    align-items: center;
+                    border-radius: 10px;
+                    border: 1px solid #ccc;
+                    padding: 5rem 0;
+
+                    .img{
+                        display: flex;
+                        justify-content: center;
+
+                        img{
+                            width: 20%;
+                            
+                        }
+                    }
+
+                    .title{
+                        text-align: center;
+                        margin-top: 2rem;
+                        font-weight: 600;
+                        font-size: 16px;
+
+                    }
+
+                }
+            }
+        }
+
+    }
+    // end services css
+
+
+    // ==================================================
+
+
+    // portfolio css
+    #Portfolio{
+        @include tabs();
+        padding-bottom: 10rem;
+        // width: 100%;
+        height: 100%;
+
+        .content{
+            padding: 0 3rem;
+            // width: 100%;
+            // height: 100%;
+
+            .heading{
+                @include heading();
+            }
+
+            .portfolio{
+                margin-top: 10rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 50px;
+                
+
+                .box__portfolio{
+                    background-color: #fff;
+                    // height: 200px;
+                    // display: flex;
+                    // justify-content: flex-end;
+                    // flex-direction: column;
+                    align-items: center;
+                    border-radius: 10px;
+                    border: 1px solid #ccc;
+                    padding: 5rem 0;
+
+                    .img{
+                        a{
+                            display: flex;
+                            justify-content: center;
+
+                            img{
+                                width: 20%;
+                                
+                            }
+                        }
+                    }
+
+                    .title{
+                        text-align: center;
+                        margin-top: 2rem;
+                        font-weight: 600;
+                        font-size: 16px;
+                        a{
+                            text-decoration: none;
+                        }
+
+                    }
+
+                }
+            }
+
+            
+        }
+
+    }
+    // end portfolio css
+
+
+    // =====================================================
+
+
+    // blogs css
+    #Blogs{
+        @include tabs();
+        height: 100%;
+
+        .content{
+            padding: 0 3rem;
+
+            .heading{
+                @include heading();
+            }
+
+            
+        }
+
+    }
+    // end blogs css
+
+
+    // ===========================================================
+
+
+    // contact css
+    #Contact{
+        @include tabs();
+        height: 100%;
+
+        .content{
+            padding: 0 3rem;
+
+            .heading{
+                @include heading();
+            }
+
+            .contact{
+               
+                .social{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-top: 10rem;
+
+                    .social__box{
+
+                        &:hover .img{
+                            transform: scale(1.2);
+                        }
+
+                        .img{
+                            display: flex;
+                            justify-content: center;
+                            text-decoration: none;
+                            transition: all 0.5s ease-in-out;
+                            img{
+
+                                width: 20%;
+                                text-align: center;
+                            }
+                        }
+
+                        .title{
+                            text-align: center;
+
+                            a{
+                                text-decoration: none;
+                                color: $color;
+                            }
+                        }
+
+                        .description{
+                            text-align: center;
+
+                            a{
+                                text-decoration: none;
+                                color: $color;
+                            }
+                        }
+
+                    }
+                }
+
+                .form{
+                    display: grid;
+                    grid-row-gap: 20px;
+                    padding: 5rem 10rem;
+
+                    .columns{
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 20px;
+
+                    }
+                    
+                    input{
+                      width: 100%;
+                      padding-left: 20px;
+                      height: 50px;
+                      outline: none;
+                      border-radius: 30px;
+                      border: 1px solid #ccc;
+                      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    }  
+
+                    textarea{
+                        border: 1px solid #ccc;
+                        width: 100%;
+                        padding: 20px 20px;
+                        outline: none;
+                        border-radius: 10px;
+                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    }
+
+                    // button message
+                    .btn{
+                        display: flex;
+                        justify-content: center;
+                        button{
+                            background: linear-gradient(to right,#12c2e9, #c471ed, #f64f59);
+                            width: 30%;
+                            height: 50px;
+                            border: none;
+                            border-radius: 30px;
+                            color: #fff;
+                            font-weight: 600;
+                            letter-spacing: 2px;
+                            font-size: 16px;
+                            transition: all 0.5s ease-in-out;
+    
+                            &:hover{
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+            }
+
+            
+        }
+
+
+    }
+    // end contact css
+    
+
+    // keyframe chuyển tabs
+    @keyframes animate {
+        from{
+            transform: translateY(-100%);
+        }
+        to{
+            transform: translateY(0%);
+        } 
+    }
+}

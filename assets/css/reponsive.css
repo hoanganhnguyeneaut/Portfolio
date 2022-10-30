@@ -1,0 +1,187 @@
+/* mobile */
+@media screen and (max-width:767px) {
+    
+    aside{
+        position: fixed;
+        width: 350px;
+        z-index: 70;
+        left:-350px;
+        height: 100vh;
+        transition: all 0.5s ease-in-out;
+        /* background-color: red; */
+    }
+
+    aside.active{
+        left: 0;
+    }
+
+    aside nav{
+        padding: 0 10rem;
+    }
+
+    aside .hambuger{
+        display: block;
+        position: absolute;
+        right: -8rem;
+        top: 30px;
+        background-color: #fff;
+        padding: 0 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+
+    }
+
+    .hambuger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hambuger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+        background-color: red;
+    }
+
+    .hambuger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: red;
+    }
+
+
+    /* home */
+
+    #Home{
+        width: 100%;
+    }
+    .content{
+        flex-direction: column;
+        /* height: 100%; */
+        padding-top: 5rem;
+    }
+
+    .content .left{
+        padding-top: 5rem ;
+        order: 2;
+        
+    }
+
+    .content .right{
+        order: 1;
+        position: relative;
+        top: 50%;
+        transform: translateY(50%);
+        
+    }
+
+    #About .infomation{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    #About .infomation .info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    main #About .content .infomation .info__left-item,
+    main #About .content .infomation .info__right-item{
+        margin:10px 0;
+        
+    }
+
+    main #About .content .infomation .skill {
+        padding-left: 0px;
+        margin-top: 3rem;
+    }
+
+    
+
+    /* Contact */
+    main #Contact .social{
+        /* padding: 0 10rem; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main #Contact .content .contact .social {
+        padding-top: 5rem;
+    }
+
+    main #Contact .content .contact .social .social__box{
+        padding: 1rem 0;
+    }
+
+    main #Contact .content .contact .social .social__box .img img {
+        width: 10%;
+        text-align: center;
+    }
+
+    main #Contact .content .contact .form {
+        
+        padding: 5rem 0;
+    }
+
+    main #Contact .content .contact .form .btn button {
+        width: 60%;
+        
+    }
+
+
+
+}
+
+
+@media screen and (min-width:767px) and (max-width:1023px) {
+    
+    aside{
+        position: fixed;
+        width: 350px;
+        z-index: 70;
+        left:-350px;
+        height: 100vh;
+        transition: all 0.5s ease-in-out;
+        /* background-color: red; */
+    }
+
+    aside.active{
+        left: 0;
+    }
+
+    aside nav{
+        padding: 0 10rem;
+    }
+
+    aside .hambuger{
+        display: block;
+        position: absolute;
+        right: -8rem;
+        top: 30px;
+        background-color: #fff;
+        padding: 0 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+
+    }
+
+    .hambuger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hambuger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+        background-color: red;
+    }
+
+    .hambuger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: red;
+    }
+
+
+    /* home */
+
+   
+
+
+}
+
